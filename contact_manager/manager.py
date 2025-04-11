@@ -7,9 +7,8 @@ class ContactManager():
         self.contactlist = []
         
 
-    def add_contact(self, name, phone, email):
+    def add_contact(self, contact):
         # TODO: Add contact to the list
-        contact = Contact(name, phone, email)
         self.contactlist.append(contact)
         
 

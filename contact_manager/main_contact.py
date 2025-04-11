@@ -13,9 +13,10 @@ def main():
         if choice == "1":
             # TODO: Get input and add contact
             #contact = Contact('Karen', '012345', 'karen@gmail.com')
-            manager.add_contact(input("Enter name: "),
+            contact = Contact(input("Enter name: "),
                                 input("Enter phone number: "),
                                 input("Enter email: "))
+            manager.add_contact(contact)
 
         
         elif choice == "2":
