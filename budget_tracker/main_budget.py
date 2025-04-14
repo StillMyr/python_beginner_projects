@@ -1,4 +1,6 @@
 # TODO: Import Budget and Transaction classes
+from budget import Budget
+from transaction import Transaction
 
 def main():
     budget = Budget()
@@ -11,12 +13,29 @@ def main():
         if choice == "1":
             # TODO: Get input and create Transaction
             # TODO: Add transaction to budget
-            pass
+            transaction = Transaction(input('Enter a description: '),
+                                      float(input('Enter an amount: ')),
+                                      input('Enter a category: '),
+                                      input('Is this income, True/False: '))
+            
+            budget.add_transaction(transaction)
+            
 
         elif choice == "2":
             # TODO: Print each transaction
             # TODO: Print current balance
-            pass
+            
+            for list in budget.transactions:
+                if list.is_income.lower() == 'true':
+                    print(list)
+                else:
+                    expense = str(list).replace("Income:", "Expense:")
+                    #expense = f"Expense: {transaction.description} | £{transaction.amount} | Category: {transaction.category}"
+                    print(expense)
+            
+            balance = budget.get_balance()
+            print(f"£{balance}")
+            
 
         elif choice == "3":
             budget.save_to_file("budget_data.txt")

@@ -64,7 +64,7 @@ class ContactManager():
             print(f'{filename} not found')
 
         except Exception as e:
-            print(f'An error has occured while loading {filename}')
+            print(f'An error has occured while loading: {e}')
         
 
 
